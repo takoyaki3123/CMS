@@ -1,0 +1,72 @@
+@mixin primary($color,$bgColor,$borderColor,$hColor,$hBgColor,$hBorderColor){
+  .primary{
+    color: $color;
+    background-color: $bgColor;
+    border-color: $borderColor;
+  }
+  .primary:hover{
+    color: $hColor;
+    background-color: $hBgColor;
+    border-color: $hBorderColor;
+  }
+}
+@mixin success($color,$bgColor,$borderColor,$hColor,$hBgColor,$hBorderColor){
+  .success{
+    color: $color;
+    background-color: $bgColor;
+    border-color: $borderColor;
+  }
+  .success:hover{
+    color: $hColor;
+    background-color: $hBgColor;
+    border-color: $hBorderColor;
+  }
+}
+@mixin error($color,$bgColor,$borderColor,$hColor,$hBgColor,$hBorderColor){
+  .error{
+    color: $color;
+    background-color: $bgColor;
+    border-color: $borderColor;
+  }
+  .error:hover{
+    color: $hColor;
+    background-color: $hBgColor;
+    border-color: $hBorderColor;
+  }
+}
+@mixin other($color,$bgColor,$borderColor,$hColor,$hBgColor,$hBorderColor){
+  .other{
+    color: $color;
+    background-color: $bgColor;
+    border-color: $borderColor;
+  }
+  .other:hover{
+    color: $hColor;
+    background-color: $hBgColor;
+    border-color: $hBorderColor;
+  }
+}
+.outline{
+  button{
+    border: 1px solid;
+  }
+  @include success(#28a745, #fff, #28a745, #218838,#ddd ,#1e7e34 );
+  @include primary(#007bff,#fff ,#007bff ,#0069d9 ,#ddd ,#0062cc );
+  @include error(#dc3545, #fff, #dc3545, #c82333, #ddd, #bd2130);
+  @include other(#6c757d, #fff, #6c757d, #5a6268, #ddd, #545b62);
+}
+.contain{
+  @include success( #fff, #28a745, #28a745, #ddd, #218838, #1e7e34 );
+  @include primary(#fff, #007bff,#007bff ,#ddd, #0069d9,#0062cc );
+  @include error(#fff, #dc3545, #dc3545, #ddd, #c82333, #bd2130);
+  @include other(#fff, #6c757d, #6c757d, #ddd, #5a6268, #545b62);
+}
+.none{
+  button{
+    border: none;
+  }
+  @include success(#28a745, #fff, #fff, #218838,#ddd ,#1e7e34 );
+  @include primary(#007bff,#fff ,#007bff ,#0069d9 ,#ddd ,#0062cc );
+  @include error(#dc3545, #fff, #dc3545, #c82333, #ddd, #bd2130);
+  @include other(#6c757d, #fff, #6c757d, #5a6268, #ddd, #545b62);
+}
