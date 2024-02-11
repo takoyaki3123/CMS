@@ -1,10 +1,11 @@
 import React, { Fragment } from "react"
 import { Switch } from "react-router-dom/cjs/react-router-dom";
 
-import {TextField,Navbar} from "./public";
-import Button from "./public/button/Button";
-import Carousel from "./public/Carousel/Carousel";
+import {TextField,Navbar,Card, Tab} from "./public";
 
+const test = (props) => {
+  return (<div>testing</div>);
+}
 const App = () => {
   const isLogin = false;
   const route = (
@@ -20,17 +21,15 @@ const App = () => {
       src:"/storage/images/補習班1.jpg"
     }
   ];
+  
+  const titleList = [{title:"test1"},{title:"test2"}];
+  const panelList = [{panel:<div>testing1</div>,title:"test1"},{panel:<div>testing2</div>,title:"test2"}];
   return (
     <Fragment>
       <Navbar isLogin={isLogin}/>
       <TextField nameInLeft={false} nameDisplay={true}></TextField> 
-      <Button isShow={true} text={"outline"} type={"success"} variant={"outline"}/>
-      <Button isShow={true} text={"contain"} type={"error"} variant={"contain"}/>
-      <Button isShow={true} text={"contain"} type={"other"} variant={"contain"}/>
-      <Button isShow={true} text={"none"} type={"primary"} variant={"none"}/>
-      <div>
-        <Carousel imgList={imgList}/>
-      </div>
+      <Tab titleList={titleList} panelList={panelList}/>
+
     </Fragment>
   )
 }
