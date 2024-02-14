@@ -1,0 +1,10 @@
+.cardInside{
+  position: relative;
+  .card-title{
+    position:absolute;
+    bottom:1.25rem;
+  }
+}
+.card{
+  border:none !important;
+}

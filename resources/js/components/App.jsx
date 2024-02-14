@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { Switch } from "react-router-dom/cjs/react-router-dom";
 
-import {TextField,Navbar,Card, Tab} from "./public";
+import {TextField,Navbar,Card, Tab, PersonalInfo, SideNav, Pagin} from "./public";
 
 const test = (props) => {
   return (<div>testing</div>);
@@ -28,8 +28,9 @@ const App = () => {
     <Fragment>
       <Navbar isLogin={isLogin}/>
       <TextField nameInLeft={false} nameDisplay={true}></TextField> 
-      <Tab titleList={titleList} panelList={panelList}/>
-
+      <PersonalInfo stickerSrc={""} name={"all mind"} info={"testing for personal info\r\ntesting for personal info"}/>
+      <SideNav/>
+      <Pagin/>
     </Fragment>
   )
 }
