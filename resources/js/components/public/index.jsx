@@ -8,6 +8,9 @@ import Tab from "./Tab/Tab";
 import PersonalInfo from "./PersonalInfo/PersonalInfo";
 import SideNav from "./SideNav/SideNav";
 import Pagin from "./Pagin/Pagin";
+import Image from "./Image/Image";
+import Avatar from "./Avatar/Avatar";
+import MdTextarea from "./MdTextarea/MdTextarea";
 export {
   Navbar,
   TextField,
@@ -17,5 +20,8 @@ export {
   Tab,
   PersonalInfo,
   SideNav,
-  Pagin
+  Pagin,
+  Image,
+  Avatar,
+  MdTextarea,
 }

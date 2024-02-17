@@ -19,9 +19,7 @@ function configStoreDev (initialState){
 
   // create store
   const store = configureStore({
-    reducer:{
-      root:createRootReducer(history)
-    },
+    reducer:createRootReducer(history),
     middleware:(getDefaultMiddleware) => {
       return getDefaultMiddleware().concat(middlewares);
     },

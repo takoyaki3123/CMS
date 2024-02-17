@@ -68,6 +68,12 @@ const Pagin = (props) => {
   )
 }
 Pagin.propTypes = {
+  // string
   count: PropTypes.string,
+  // array
+  list: PropTypes.array,
+  allData: PropTypes.array,
+  // function
+  setList: PropTypes.func,
 }
 export default Pagin;

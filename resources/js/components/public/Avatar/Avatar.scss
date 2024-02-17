@@ -1,0 +1,11 @@
+.avatar-container{
+  position:relative;
+  width:14rem;
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  .avatar{
+    position:absolute;
+    bottom: 1.25rem;
+  }
+}

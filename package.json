@@ -30,6 +30,7 @@
         "@reduxjs/toolkit": "2.0.1",
         "react-router-dom": "5.2.0",
         "prop-types": "15.8.1",
-        "connected-react-router": "6.9.3"
+        "connected-react-router": "6.9.3",
+        "@uiw/react-md-editor":"3.6.0"
     }
 }
