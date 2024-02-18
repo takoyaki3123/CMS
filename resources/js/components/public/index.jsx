@@ -11,6 +11,7 @@ import Pagin from "./Pagin/Pagin";
 import Image from "./Image/Image";
 import Avatar from "./Avatar/Avatar";
 import MdTextarea from "./MdTextarea/MdTextarea";
+import Loader from "./Loader/Loader";
 export {
   Navbar,
   TextField,
@@ -24,4 +25,5 @@ export {
   Image,
   Avatar,
   MdTextarea,
+  Loader,
 }

@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react"
 import { Switch } from "react-router-dom/cjs/react-router-dom";
 
-import {TextField,Navbar,Card, Tab, PersonalInfo, SideNav, Pagin, Avatar, MdTextarea} from "./public";
+import {TextField,Navbar,Card, Tab, PersonalInfo, SideNav, Pagin, Avatar, MdTextarea, Loader} from "./public";
 import { useSelector } from "react-redux";
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <Fragment>
       <Navbar isLogin={isLogin.bool}/>
-      <MdTextarea value={value} setValue={setValue}/>
+      <Loader/>
     </Fragment>
   )
 }
