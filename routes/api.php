@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ClassListModelController;
+use \App\Http\Controllers\ClassType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('/classType',[ClassType::class,'index']);
+Route::post('/classList',[ClassListModelController::class,'findByTypeID']);
+Route::post('/classDetail',[ClassListModelController::class,'show']);

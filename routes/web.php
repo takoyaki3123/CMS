@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+// Route::get('cms/class/type', function () {
+//     return view('welcome');
+// });
+
+Route::any('cms/{all?}',function(){
     return view('welcome');
-});
+})->where('all','.+');
