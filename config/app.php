@@ -185,6 +185,7 @@ return [
     'aliases' => array(
       'ClassTypeModel' => \App\Models\ClassType::class,
       'ClassListModel' => \App\Models\ClassListModel::class,
+      'TeacherDetailModel' => App\Models\TeacherDetailModel::class,
     )
 
 ];

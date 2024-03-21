@@ -7,5 +7,8 @@ export default {
     RoleName: "",
     Role: "",
   },
+  classInfo:{
+    type:""
+  },
   sample:{}
 }

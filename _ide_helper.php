@@ -491,6 +491,8 @@ namespace Illuminate\Routing {
 
 namespace  {
             class ClassTypeModel extends \App\Models\ClassType {}
+            class ClassListModel extends \App\Models\ClassListModel {}
+            class TeacherDetailModel extends \App\Models\TeacherDetailModel {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
     }
 

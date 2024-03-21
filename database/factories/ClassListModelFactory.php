@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\TeacherDetailModel;
 use ClassTypeModel;
 use Database\Seeders\ClassType;
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -22,7 +23,7 @@ class ClassListModelFactory extends Factory
             //
             'CLASS_NAME' => fake()->name(),
             'TYPE_ID' => ClassTypeModel::all()->random()->id,
-            'TEACHER_ID' => fake()->numberBetween(1,100),
+            'TEACHER_ID' => TeacherDetailModel::all()->random()->id,
             'IMG_SRC' => '/storage/images/補習班1.jpg',
             'DESCRIBE' => fake()->text(),
             'START_DATE' => fake()->date(),

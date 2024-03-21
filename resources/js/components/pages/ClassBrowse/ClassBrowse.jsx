@@ -13,6 +13,7 @@ const ClassBrowse = (props) => {
     const getClassList = () => {
         baseApi("classList",{ID:location.state.typeID})
         .then((res) => {
+            console.log("get class list:",res.data);
             setClassList(res.data);
         });
     }
