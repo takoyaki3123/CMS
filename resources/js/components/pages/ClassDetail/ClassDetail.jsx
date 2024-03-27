@@ -7,13 +7,11 @@ const ClassDetail = () => {
     const location = useLocation();
     const [detail, setDetail] = useState({});
     const init = () => {
-        console.log("getdetail");
         getDetail();
     }
     const getDetail = () => {
         baseApi("classDetail",{ID:location.state.classID})
         .then((res) => {
-            console.log("get class detail:",res.data);
             setDetail(res.data);
         });
     }

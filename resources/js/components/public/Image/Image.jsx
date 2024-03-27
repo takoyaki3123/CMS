@@ -10,18 +10,24 @@ const Image = (props) => {
   }
   useEffect(()=>{
     setImgSrc(props.src);
+    if(props.sec == ""){
+      setImageHide();
+    }
+    console.log(props.errorSet);
   },[])
-  
+
   return(
     <Fragment>
-      <img src={imgSrc} alt={props.alt} className={`${props.className} ${hide?'hidden':''}`} onError={props.errorImg?()=>setImgSrc(props.errorImg):()=>setImageHide()}/>
+      <img src={imgSrc} alt={props.alt} className={`${props.className} ${hide?'hidden':''}`}/>
     </Fragment>
   )
-} 
+}
 Image.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   className: PropTypes.string,
   errorImg: PropTypes.string,
+  //bool,
+  errorSet: PropTypes.bool,
 }
 export default Image;

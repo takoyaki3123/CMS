@@ -10,7 +10,12 @@ const Card = (props) => {
       <div className={`${props.descLeftSide ? "row" : ""}`}>
         <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descLeftSide ? "col-4" : ""}`}>
           <a href={props.link}>
-            <Image src={"/storage/images/補習班1.jpg"} alt="..." className={"card-img-top"} />
+            <Image
+              src={"/storage/images/補習班1.jpg"}
+              alt="..."
+              className={"card-img-top"}
+              errorImg={props.errorImgSrc}
+              errorSet={props.errorSet} />
           </a>
           <div className="card-title w-100"><h5 className=" d-flex justify-content-center">{props.title}</h5></div>
         </div>
@@ -29,10 +34,12 @@ Card.propTypes = {
   // bool
   titleInside: PropTypes.bool,
   descLeftSide: PropTypes.bool,
+  errorSet: PropTypes.bool,
   // string
   title: PropTypes.string,
   text: PropTypes.string,
   imgSrc: PropTypes.string,
+  errorImgSrc: PropTypes.string,
   link: PropTypes.string,
   size: PropTypes.string,
   //func

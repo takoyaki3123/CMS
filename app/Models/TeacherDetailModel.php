@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use ClassListModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -14,19 +15,24 @@ class TeacherDetailModel extends Model
    * @var array<int, string>
    */
   protected $fillable = [
-    'TYPE_NAME',
-    'CODE',
+    'NAME',
+    'GRADE_SCHOOL',
+    'EXPERTISE',
+    'EMAIL',
     'CREATETIME',
     'CREATOR',
     'LASTUPDATE',
     'MODIFIER'
   ];
 
-  protected $primaryKey = 'id';
+  public $primaryKey = 'id';
 
   protected $dateFormat = 'Y-m-d';
 
   public $timestamps = false;
 
   protected $table = 'TEACHER_DETAIL';
+  // public function ClassListModelHasMany(){
+  //   return $this->hasMany(ClassListModel::class,'id','teacher_id');
+  // }
 }

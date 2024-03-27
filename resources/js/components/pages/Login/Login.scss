@@ -1,0 +1,14 @@
+.login-container{
+  width:40%;
+  .login{
+    width:100%;
+    border-radius: 0.677777rem;
+    background-color: #DCEEFA;
+    .login-avatar{
+      width: fit-content;
+    }
+    .login-avatar .avatar-container img{
+      border-radius: 50% !important;
+    }
+  }
+}

@@ -8,11 +8,11 @@ const TextField = (props) => {
     //onChange={(e) => {props.setVO({...VO, [voName]:e.target.value})}}
     <Fragment>
       <div className={(props.nameDisplay&&props.nameInLeft?"textField ":"textField-Top ") + " mx-2 tfTop"}>
-        {props.nameDisplay?<label className="flex-column">{"fieldName"}</label>:<Fragment/>}
+        {props.nameDisplay?<label className="flex-column">{props.fieldName}</label>:<Fragment/>}
         <div className="textField-container">
-          <input type={"text"} />
+          <input type={props.type} onChange={(e) => {props.setVO({...props.VO, [props.voName]:e.target.value})}}/>
           <fieldset className="textFieldSet">
-            <legend className="textLegend"><span>{"fieldName"}</span></legend>
+            <legend className="textLegend"><span>{props.fieldName}</span></legend>
           </fieldset>
         </div>
       </div>

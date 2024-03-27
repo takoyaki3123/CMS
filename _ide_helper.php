@@ -493,6 +493,17 @@ namespace  {
             class ClassTypeModel extends \App\Models\ClassType {}
             class ClassListModel extends \App\Models\ClassListModel {}
             class TeacherDetailModel extends \App\Models\TeacherDetailModel {}
+            class BoardModel extends \App\Models\BoardModel {}
+            class FileModel extends \App\Models\FileModel {}
+            class GradeModel extends \App\Models\GradeModel {}
+            class GrpModel extends \App\Models\GrpModel {}
+            class HomeWorkModel extends \App\Models\HomeWorkModel {}
+            class IdentifyModel extends \App\Models\IdentityModel {}
+            class NoteModel extends \App\Models\NoteModel {}
+            class StudentClassModel extends \App\Models\StudentSelectClassModel {}
+            class TeacherAssistantModel extends \App\Models\TeacherAssistantModel {}
+            class TextBoolModel extends \App\Models\TextBookModel {}
+            class UserModel extends \App\Models\UserModel {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
     }
 

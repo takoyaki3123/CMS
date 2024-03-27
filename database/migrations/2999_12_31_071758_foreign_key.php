@@ -12,12 +12,13 @@ return new class extends Migration
    */
   public function up(): void
   {
+    Schema::table('TEACHER_DETAIL', function (Blueprint $table) {
+      $table->foreignId('id')->constrained('USER', 'id');
+    });
     Schema::table('CLASS_LIST', function (Blueprint $table) {
       //
       $table->foreignId('TYPE_ID')->constrained('CLASS_TYPE', 'id');
-    });
-    Schema::table('TEACHER_DETAIL', function (Blueprint $table) {
-      $table->foreignId('id')->constrained('USER', 'id');
+      $table->foreignId('TEACHER_ID')->constrained('TEACHER_DETAIL','id');
     });
     Schema::table('TEACHER_ASSISTANT',function (Blueprint $table){
       $table->foreignId('CLASS_ID')->constrained('CLASS_LIST','id');
@@ -59,6 +60,7 @@ return new class extends Migration
   {
     Schema::table('CLASS_LIST', function (Blueprint $table) {
       //
+      $table->dropForeign('class_list_teacher_id_foreign');
       $table->dropForeign('class_list_type_id_foreign');
     });
     Schema::table('TEACHER_DETAIL',function(Blueprint $table){

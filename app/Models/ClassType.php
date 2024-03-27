@@ -17,6 +17,7 @@ class ClassType extends Model
     protected $fillable = [
       'TYPE_NAME',
       'CODE',
+      'IMG_SRC',
       'CREATETIME',
       'CREATOR',
       'LASTUPDATE',

@@ -32,7 +32,7 @@ const App = () => {
     <Suspense fallback={
         <Loader/>
     }>
-
+        <Loader/>
         <Fragment>
         <Navbar isLogin={isLogin.bool}/>
         <div className="container">

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use TeacherDetailModel;
 
 class ClassListModel extends Model
 {
@@ -14,19 +15,28 @@ class ClassListModel extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'TYPE_NAME',
-        'CODE',
+        'CLASS_NAME',
+        'IMG_SRC',
+        'TEACHER_ID',
+        'DESCRIBE',
+        'START_DATE',
+        'CLASS_WEEK_DAY',
+        'START_TIME',
+        'END_TIME',
         'CREATETIME',
         'CREATOR',
         'LASTUPDATE',
         'MODIFIER'
       ];
 
-      protected $primaryKey = 'id';
+      public $primaryKey = 'id';
 
       protected $dateFormat = 'Y-m-d';
 
       public $timestamps = false;
 
       protected $table = 'class_list';
+      // public function teacherElement(){
+      //   return $this->belongsTo(TeacherDetailModel::class,'teacher_id','id')->select(['id','teacher_id','name','graduated_school']);
+      // }
 }

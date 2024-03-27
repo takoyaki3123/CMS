@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('CLASS_NAME');
             // $table->bigInteger('TYPE_ID');
             $table->string('IMG_SRC');
-            $table->bigInteger('TEACHER_ID');
             $table->string('DESCRIBE')->nullable();
             $table->date('START_DATE');
             $table->integer('CLASS_WEEK_DAY')->nullable();

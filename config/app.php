@@ -186,6 +186,17 @@ return [
       'ClassTypeModel' => \App\Models\ClassType::class,
       'ClassListModel' => \App\Models\ClassListModel::class,
       'TeacherDetailModel' => App\Models\TeacherDetailModel::class,
+      'BoardModel' => App\Models\BoardModel::class,
+      'FileModel' => App\Models\FileModel::class,
+      'GradeModel' => App\Models\GradeModel::class,
+      'GrpModel' => App\Models\GrpModel::class,
+      'HomeWorkModel' => App\Models\HomeWorkModel::class,
+      'IdentifyModel' => App\Models\IdentityModel::class,
+      'NoteModel' => App\Models\NoteModel::class,
+      'StudentClassModel' => App\Models\StudentSelectClassModel::class,
+      'TeacherAssistantModel' => App\Models\TeacherAssistantModel::class,
+      'TextBoolModel' => App\Models\TextBookModel::class,
+      'UserModel' => App\Models\UserModel::class,
     )
 
 ];
