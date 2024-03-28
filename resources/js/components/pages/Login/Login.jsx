@@ -3,13 +3,24 @@ import {Avatar, Button, TextField} from "../../public";
 import './Login.scss';
 import {loginVO} from './LoginVO';
 import { baseApi } from "../../../public/api";
+import { useDispatch } from "react-redux";
+import * as action from '../../../actions/action';
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 const Login = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [VO, setVO] = useState(new Object(loginVO));
 
   const handleLogin = (param) => {
     baseApi("login",param)
     .then((res) => {
-      console.log("login res:",res);
+      if(res.data['id']){
+        dispatch(action.setIsLogin({bool:true}));
+        history.push('home');
+      }
+      else{
+        alert("帳號或密碼錯誤!");
+      }
     })
 
   }
@@ -41,6 +52,9 @@ const Login = () => {
               VO={VO}
               setVO={setVO}/>
 
+          </div>
+          <div className=" col-12 d-flex justify-content-end">
+            <a onClick={()=>{history.push("register")}} className="cms-register">註冊</a>
           </div>
           <div className="mx-auto my-4 d-flex justify-content-center">
             <Button
