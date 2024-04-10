@@ -16,7 +16,6 @@ return new class extends Migration
           $table->string('GRADUATED_SCHOOL');
           $table->string('IMG_SRC');//教師照片
           $table->string('EXPERTISE');
-          $table->string('EMAIL');
           $table->timestamp('CREATETIME')->useCurrent();
           $table->string('CREATOR');
           $table->timestamp('LASTUPDATE')->useCurrent();

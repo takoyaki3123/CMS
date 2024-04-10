@@ -6,3 +6,9 @@ export function setIsLogin(vo)  {
     vo
   }
 }
+export function setUserInfo(vo){
+  return {
+    type:'USERINFO_UPDATE',
+    vo
+  }
+}

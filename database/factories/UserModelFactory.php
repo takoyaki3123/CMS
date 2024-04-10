@@ -28,10 +28,9 @@ class UserModelFactory extends Factory
           'ACCT' => fake()->name(),
           'PWD' => fake()->password(),
           'NAME' => fake()->name(),
-          'AGE' => '18',
+          'EMAIL' => fake()->email(),
+          'IDENTITY_ID' => 1,
           'SEX' => '1',
-          'IDENTITY_ID' => IdentityModel::all()->random()->id,
-          'MODIFIER' => fake()->name(),
 
         ];
     }

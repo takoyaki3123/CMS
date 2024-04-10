@@ -21,12 +21,12 @@ class UserModel extends Authenticatable
     'ACCT',
     'PWD',
     'NAME',
-    'AGE',
+    'EMAIL',
     'SEX',
+    'AGE',
     'IDENTITY_ID',
     'CREATETIME',
     'LASTUPDATE',
-    'MODIFIER'
   ];
 
   /**

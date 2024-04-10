@@ -7,6 +7,15 @@ export default {
     RoleName: "",
     Role: "",
   },
+  userInfo: {
+    acct:"",
+    pwd:"",
+    name:"",
+    role:"",
+    sex:"",
+    email:"",
+    age:"",
+  },
   classInfo:{
     type:""
   },

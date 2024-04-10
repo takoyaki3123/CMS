@@ -12,6 +12,8 @@ import Image from "./Image/Image";
 import Avatar from "./Avatar/Avatar";
 import MdTextarea from "./MdTextarea/MdTextarea";
 import Loader from "./Loader/Loader";
+import Select from "./Select/Select";
+import Dialog from "./Dialog/Dialog";
 export {
   Navbar,
   TextField,
@@ -26,4 +28,6 @@ export {
   Avatar,
   MdTextarea,
   Loader,
+  Select,
+  Dialog
 }

@@ -5,4 +5,6 @@ export const lazyComponent = [
   {urlCode:"/class/detail", component:lazy(()=> import('../components/pages/ClassDetail/ClassDetail'))},
   {urlCode:"/login", component:lazy(()=> import('../components/pages/Login/Login'))},
   {urlCode:"/home", component:lazy(()=> import('../components/pages/HomePage/HomePage'))},
+  {urlCode:"/register", component:lazy(()=> import('../components/pages/Register/Register'))},
+  {urlCode:"/personal", component:lazy(()=> import('../components/pages/Personal/Personal'))},
 ]

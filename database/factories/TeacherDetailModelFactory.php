@@ -24,7 +24,6 @@ class TeacherDetailModelFactory extends Factory
             'GRADUATED_SCHOOL' => fake()->name(),
             'IMG_SRC' => '/storage/images/補習班1.jpg',
             'EXPERTISE' => fake()->name(),
-            'EMAIL' => fake()->email(),
             'CREATOR' => fake()->name(),
             'MODIFIER' => fake()->name()
         ];

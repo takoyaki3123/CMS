@@ -32,7 +32,7 @@ class TeacherDetailModel extends Model
   public $timestamps = false;
 
   protected $table = 'TEACHER_DETAIL';
-  // public function ClassListModelHasMany(){
-  //   return $this->hasMany(ClassListModel::class,'id','teacher_id');
-  // }
+  public function ClassListModelHasMany(){
+    return $this->hasMany(ClassListModel::class,'teacher_id','id');
+  }
 }

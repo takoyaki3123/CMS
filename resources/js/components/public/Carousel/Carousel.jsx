@@ -1,9 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import PropTypes from "prop-types";
 import Image from "../Image/Image";
 import './Carousel.scss';
+import * as bootstrap from 'bootstrap';
 const Carousel = (props) => {
+  useEffect(()=>{
+    // reset carousel
+    // ref https://stackoverflow.com/questions/69163645/bootstrap-5-carousel-only-starts-automated-sliding-after-first-click-on-next
+    const carouselContainer = document.querySelector("#carouselExampleIndicators");
+    const carousel = new bootstrap.Carousel(carouselContainer);
+    carousel.cycle();
+  },[])
   return(
     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-indicators">

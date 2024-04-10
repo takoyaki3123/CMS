@@ -11,7 +11,7 @@ const Card = (props) => {
         <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descLeftSide ? "col-4" : ""}`}>
           <a href={props.link}>
             <Image
-              src={"/storage/images/補習班1.jpg"}
+              src={props.imgSrc}
               alt="..."
               className={"card-img-top"}
               errorImg={props.errorImgSrc}

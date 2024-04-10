@@ -16,6 +16,17 @@ const Login = () => {
     .then((res) => {
       if(res.data['id']){
         dispatch(action.setIsLogin({bool:true}));
+        const userInfo = {
+          acct:res.data['ACCT'],
+          pwd:res.data['PWD'],
+          name:res.data['NAME'],
+          role:res.data['IDENTITY_ID'],
+          sex:res.data['SEX'],
+          email:res.data['EMAIL'],
+          age:res.data['AGE'],
+        };
+        dispatch(action.setUserInfo(userInfo));
+        console.log(res.data);
         history.push('home');
       }
       else{
