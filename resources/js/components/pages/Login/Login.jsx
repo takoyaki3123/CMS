@@ -17,6 +17,7 @@ const Login = () => {
       if(res.data['id']){
         dispatch(action.setIsLogin({bool:true}));
         const userInfo = {
+          id:res.data['id'],
           acct:res.data['ACCT'],
           pwd:res.data['PWD'],
           name:res.data['NAME'],

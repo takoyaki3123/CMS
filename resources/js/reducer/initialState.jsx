@@ -8,6 +8,7 @@ export default {
     Role: "",
   },
   userInfo: {
+    id:"",
     acct:"",
     pwd:"",
     name:"",

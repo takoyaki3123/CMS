@@ -1,9 +1,24 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import Button from "../button/Button";
+import * as bootstrap from 'bootstrap';
 const Dialog = (props) => {
+  const handleSubmit = (param) => {
+    props.submit(param)
+    .then((res)=>{
+      if(res){
+        console.log(res);
+        // const modalClose = document.querySelector("#modalClose");
+        // modalClose.click();
+        const modalContainer = document.querySelector("#modal");
+        const modal = bootstrap.Modal.getInstance(modalContainer);
+        modal.hide();
+      }
+    })
+
+  }
   return(
-    <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
@@ -14,7 +29,7 @@ const Dialog = (props) => {
             {props.children}
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">{props.cancelText}</button>
+            <button type="button" className="btn btn-secondary" id="modalClose" data-bs-dismiss="modal">{props.cancelText}</button>
 
             <Button
               text={props.submitText}
@@ -22,7 +37,7 @@ const Dialog = (props) => {
               variant={"contain"}
               isShow={true}
               param={props.param}
-              onClick={props.submit}/>
+              onClick={handleSubmit}/>
           </div>
         </div>
       </div>

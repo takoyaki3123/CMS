@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { Dialog, Select, TextField } from "../../../public";
-import { DetailVO } from "./DetailVO";
 const DetailUpdate = (props) => {
   const [VO,setVO] = useState(new Object(props.userInfo));
   const sexOption = [{"val":"1","label":"男"},{"val":"2","label":"女"}]
+
   useEffect(()=>{
     console.log(props.userInfo);
     // setVO({
@@ -14,7 +14,8 @@ const DetailUpdate = (props) => {
     //   sex:props.userInfo.sex,
     //   age:props.userInfo.age,
     // })
-  },[props.userInfo])
+  },[props.userInfo]);
+
   return(
     <Dialog
       title={"修改使用者資訊"}

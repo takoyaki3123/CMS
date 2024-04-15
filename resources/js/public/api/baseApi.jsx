@@ -46,7 +46,11 @@ const baseApi = (urlCode, data) => {
   })
  })
 }
+const isError = (res) => {
+  return res.msg?true:false;
+}
 
 export {
-  baseApi
+  baseApi,
+  isError
 }

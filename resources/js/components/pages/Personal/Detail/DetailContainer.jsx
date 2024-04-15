@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import PropTypes from 'prop-types';
 import { Card, MdTextarea } from "../../../public";
 import DetailUpdate from "./DetailUpdate";
+import * as bootstrap from 'bootstrap';
 const DetailContainer = (props) => {
   const [studentDetail,setStudentDetail] = useState("");
+  const openModal = () => {
+    const modalContainer = document.querySelector("#modal");
+    const modal = new bootstrap.Modal(modalContainer);
+    modal.show();
+  }
   useEffect(()=>{
     let tmpDetail = "";
     tmpDetail += "姓名:" + props.userInfo.name + "\r\n";
@@ -27,7 +33,7 @@ const DetailContainer = (props) => {
           onClick={() => { }}
         />
         <div className="d-flex justify-content-end">
-          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">修改</button>
+          <button type="button" className="btn btn-primary" onClick={()=>{openModal()}}>修改</button>
         </div>
       </div>
       <div className="">

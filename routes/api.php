@@ -25,3 +25,4 @@ Route::post('/classList',[ClassListModelController::class,'findByTypeID']);
 Route::post('/classDetail',[ClassListModelController::class,'show']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/register',[UserController::class,'store']);
+Route::post('/userUpdate',[UserController::class,'update']);

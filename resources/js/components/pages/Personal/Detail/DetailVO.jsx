@@ -4,5 +4,5 @@ export const DetailVO = {
   email:"",
   sex:"",
   age:"",
-
+  id:"",
 }

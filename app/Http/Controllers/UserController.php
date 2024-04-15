@@ -67,7 +67,7 @@ class UserController extends Controller
       } catch (\Throwable $th) {
         $errorMsg = new ErrorMsg;
         $errorMsg->msg = $th->getMessage();
-        $errorMsg->time = "testingTime";
+        $errorMsg->time = date("Y-m-d H:i:s");
         // $errorMsg::settingError("testing","testingtime");
         return json_encode($errorMsg);
         // return true;
@@ -90,9 +90,28 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, UserModel $userModel)
+    public function update(Request $request)
     {
-        //
+        // get data model
+        $post = $request->post()['body'];
+        try {
+          $result = UserModel::whereId($post['id'])->update([
+            'PWD'=>$post['pwd'],
+            'NAME'=>$post['name'],
+            'SEX'=>$post['sex'],
+            'EMAIL'=>$post['email'],
+            'AGE'=>$post['age'],
+          ]);
+          return $result;
+        } catch (\Throwable $th) {
+          //throw $th;
+          $errorMsg = new ErrorMsg;
+          $errorMsg->msg = $th->getMessage();
+          $errorMsg->time = date("Y-m-d H:i:s");
+          // $errorMsg::settingError("testing","testingtime");
+          return json_encode($errorMsg);
+        }
+
     }
 
     /**
