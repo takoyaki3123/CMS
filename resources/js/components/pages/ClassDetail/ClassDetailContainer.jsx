@@ -16,7 +16,7 @@ const ClassDetailContainer = (props) => {
       <div className="">
         <Card
           titleInside={false}
-          descLeftSide={true}
+          descSide={"right"}
           title={""}
           imgSrc={props.detail.IMG_SRC}
           errorSet={false}

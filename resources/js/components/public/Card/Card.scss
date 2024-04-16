@@ -14,3 +14,8 @@
 pre{
   white-space: pre-line;
 }
+.card-row{
+  max-width: 100%;
+  // fix bootstrap bug
+  --bs-gutter-x:0;
+}

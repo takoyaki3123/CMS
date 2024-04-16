@@ -37,45 +37,47 @@ const Login = () => {
 
   }
   return(
-    <div className="login-container mt-4 mx-auto">
-      <div className="login d-flex justify-content-center flex-wrap">
-        <div className="login-avatar mt-5">
-          <Avatar imgSrc={'/storage/images/default-user.jpg'}/>
-        </div>
-        <div className="mt-5 mx-auto">
-          <div className="col-12 my-2">
-            <TextField
-              type={"text"}
-              fieldName={"帳號"}
-              nameDisplay={true}
-              nameInLeft={true}
-              voName={"acct"}
-              VO={VO}
-              setVO={setVO}/>
+    <div className="container">
+      <div className="login-container mt-4 mx-auto">
+        <div className="login d-flex justify-content-center flex-wrap">
+          <div className="login-avatar mt-5">
+            <Avatar imgSrc={'/storage/images/default-user.jpg'}/>
+          </div>
+          <div className="mt-5 mx-auto">
+            <div className="col-12 my-2">
+              <TextField
+                type={"text"}
+                fieldName={"帳號"}
+                nameDisplay={true}
+                nameInLeft={true}
+                voName={"acct"}
+                VO={VO}
+                setVO={setVO}/>
 
-          </div>
-          <div className="col-12 my-2">
-            <TextField
-              type={"password"}
-              fieldName={"密碼"}
-              nameDisplay={true}
-              nameInLeft={true}
-              voName={"ps"}
-              VO={VO}
-              setVO={setVO}/>
+            </div>
+            <div className="col-12 my-2">
+              <TextField
+                type={"password"}
+                fieldName={"密碼"}
+                nameDisplay={true}
+                nameInLeft={true}
+                voName={"ps"}
+                VO={VO}
+                setVO={setVO}/>
 
-          </div>
-          <div className=" col-12 d-flex justify-content-end">
-            <a onClick={()=>{history.push("register")}} className="cms-register">註冊</a>
-          </div>
-          <div className="mx-auto my-4 d-flex justify-content-center">
-            <Button
-              text={"ログイン"}
-              type={"primary"}
-              variant={"contain"}
-              isShow={true}
-              param={VO}
-              onClick={handleLogin}/>
+            </div>
+            <div className=" col-12 d-flex justify-content-end">
+              <a onClick={()=>{history.push("register")}} className="cms-register">註冊</a>
+            </div>
+            <div className="mx-auto my-4 d-flex justify-content-center">
+              <Button
+                text={"ログイン"}
+                type={"primary"}
+                variant={"contain"}
+                isShow={true}
+                param={VO}
+                onClick={handleLogin}/>
+            </div>
           </div>
         </div>
       </div>

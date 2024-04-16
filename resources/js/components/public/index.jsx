@@ -14,6 +14,7 @@ import MdTextarea from "./MdTextarea/MdTextarea";
 import Loader from "./Loader/Loader";
 import Select from "./Select/Select";
 import Dialog from "./Dialog/Dialog";
+import Footer from "./Footer/Footer";
 export {
   Navbar,
   TextField,
@@ -29,5 +30,6 @@ export {
   MdTextarea,
   Loader,
   Select,
-  Dialog
+  Dialog,
+  Footer,
 }

@@ -1,7 +1,7 @@
 import React, { Fragment, Suspense, useEffect, useState } from "react"
 import { Route, Switch } from "react-router-dom/cjs/react-router-dom";
 
-import {TextField,Navbar,Card, Tab, PersonalInfo, SideNav, Pagin, Avatar, MdTextarea, Loader} from "./public";
+import {TextField,Navbar,Card, Tab, PersonalInfo, SideNav, Pagin, Avatar, MdTextarea, Loader, Footer} from "./public";
 import { useSelector } from "react-redux";
 import TypeBrowse from "./pages/TypeBrowse/TypeBrowse";
 import { lazyComponent } from "../conf";
@@ -34,11 +34,11 @@ const App = () => {
     }>
         <Loader/>
         <Fragment>
-        <Navbar isLogin={isLogin.bool}/>
-        <div className="container">
-            {route}
-
-        </div>
+          <Navbar isLogin={isLogin.bool}/>
+          <div className="">
+              {route}
+          </div>
+          <Footer isLogin={isLogin.bool}/>
         </Fragment>
     </Suspense>
   )

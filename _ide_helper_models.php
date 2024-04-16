@@ -44,6 +44,30 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $IMG_SRC
+ * @property string $CREATETIME
+ * @property string $CREATOR
+ * @property string $LASTUPDATE
+ * @property string $MODIFIER
+ * @method static \Database\Factories\CarouselModelFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel whereCREATETIME($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel whereCREATOR($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel whereIMGSRC($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel whereLASTUPDATE($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CarouselModel whereMODIFIER($value)
+ */
+	class CarouselModel extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property string $CLASS_NAME
  * @property string $IMG_SRC
  * @property string|null $DESCRIBE
@@ -303,6 +327,34 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|StudentSelectClassModel whereSTUDENTID($value)
  */
 	class StudentSelectClassModel extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $DESC
+ * @property string $IMG_SRC
+ * @property string $CREATETIME
+ * @property string $CREATOR
+ * @property string $LASTUPDATE
+ * @property string $MODIFIER
+ * @property int $CLASS_ID
+ * @method static \Database\Factories\SuggestClassModelFactory factory($count = null, $state = [])
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereCLASSID($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereCREATETIME($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereCREATOR($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereDESC($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereIMGSRC($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereLASTUPDATE($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SuggestClassModel whereMODIFIER($value)
+ */
+	class SuggestClassModel extends \Eloquent {}
 }
 
 namespace App\Models{

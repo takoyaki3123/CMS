@@ -504,6 +504,8 @@ namespace  {
             class TeacherAssistantModel extends \App\Models\TeacherAssistantModel {}
             class TextBoolModel extends \App\Models\TextBookModel {}
             class UserModel extends \App\Models\UserModel {}
+            class SuggestClass extends \App\Models\SuggestClassModel {}
+            class Carousel extends \App\Models\CarouselModel {}
             class Flare extends \Spatie\LaravelIgnition\Facades\Flare {}
     }
 

@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
       GradeSeeder::class,
       NoteModelSeeder::class,
       GrpModelSeeder::class,
-
+      SuggestClassSeeder::class,
+      CarouselSeeder::class,
     ]);
     // \App\Models\User::factory()->create([
     //     'name' => 'Test User',

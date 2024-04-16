@@ -13,7 +13,7 @@ const Carousel = (props) => {
     carousel.cycle();
   },[])
   return(
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" className="carousel carousel-dark slide" data-bs-ride="carousel">
       <div className="carousel-indicators">
         {props.imgList?props.imgList.map((_,idx)=>
         <Fragment key={idx}>
@@ -26,7 +26,7 @@ const Carousel = (props) => {
       <div className="carousel-inner">
         {props.imgList?props.imgList.map((row,idx)=>
           <div className={`carousel-item ${idx==0?"active":""}`} key={idx} data-bs-interval="5000">
-            <Image src={row.src} className="d-block m-auto Carousel-img" alt="First slide"/>
+            <Image src={row.IMG_SRC} className="d-block m-auto Carousel-img" alt="First slide"/>
           </div>
         ):
         <Fragment/>}

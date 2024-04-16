@@ -197,6 +197,8 @@ return [
       'TeacherAssistantModel' => App\Models\TeacherAssistantModel::class,
       'TextBoolModel' => App\Models\TextBookModel::class,
       'UserModel' => App\Models\UserModel::class,
+      'SuggestClass' => App\Models\SuggestClassModel::class,
+      'Carousel' => App\Models\CarouselModel::class,
     )
 
 ];

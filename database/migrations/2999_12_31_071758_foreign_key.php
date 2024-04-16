@@ -51,6 +51,10 @@ return new class extends Migration
     Schema::table('GRP',function(Blueprint $table){
       $table->foreignId('CLASS_ID')->constrained('CLASS_LIST','id');
     });
+    Schema::table('SUGGEST_CLASS',function(Blueprint $table){
+      $table->foreignId('CLASS_ID')->unique()->constrained("CLASS_LIST",'id');
+
+    });
   }
 
   /**

@@ -6,9 +6,17 @@ import './Card.scss';
 const Card = (props) => {
 
   return (
-    <div className={`card`} style={{ width: props.size }} onClick={() => props.onClick()}>
-      <div className={`${props.descLeftSide ? "row" : ""}`}>
-        <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descLeftSide ? "col-4" : ""}`}>
+    <div className={`card ${props.class}`} style={{ width: props.size }} onClick={() => props.onClick()}>
+      <div className={`${props.descSide ? "row card-row mx-0" : ""}`}>
+
+        {props.text && props.descSide==="left"?
+          <div className={`card-body ${props.descSide ? "col-8" : ""}`}>
+            <span className="card-text">
+              <pre>{props.text}</pre>
+            </span>
+          </div>
+          : <Fragment />}
+        <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descSide ? "col-4" : ""}`}>
           <a href={props.link}>
             <Image
               src={props.imgSrc}
@@ -19,8 +27,8 @@ const Card = (props) => {
           </a>
           <div className="card-title w-100"><h5 className=" d-flex justify-content-center">{props.title}</h5></div>
         </div>
-        {props.text ?
-          <div className={`card-body ${props.descLeftSide ? "col-8" : ""}`}>
+        {props.text && props.descSide==="right"?
+          <div className={`card-body ${props.descSide ? "col-8" : ""}`}>
             <span className="card-text">
               <pre>{props.text}</pre>
             </span>
@@ -33,15 +41,16 @@ const Card = (props) => {
 Card.propTypes = {
   // bool
   titleInside: PropTypes.bool,
-  descLeftSide: PropTypes.bool,
   errorSet: PropTypes.bool,
   // string
+  descSide: PropTypes.string,
   title: PropTypes.string,
   text: PropTypes.string,
   imgSrc: PropTypes.string,
   errorImgSrc: PropTypes.string,
   link: PropTypes.string,
   size: PropTypes.string,
+  class: PropTypes.string,
   //func
   onClick: PropTypes.func,
 };

@@ -24,7 +24,7 @@ const DetailContainer = (props) => {
       <div className="">
         <Card
           titleInside={false}
-          descLeftSide={true}
+          descSide={"right"}
           title={""}
           imgSrc={"/storage/images/default-user.jpg"}
           errorSet={false}
