@@ -17,15 +17,15 @@ const Card = (props) => {
           </div>
           : <Fragment />}
         <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descSide ? "col-4" : ""}`}>
-          <a href={props.link}>
+          <a href={props.link} className="card-href">
             <Image
               src={props.imgSrc}
               alt="..."
-              className={"card-img-top"}
+              className={"card-img-top card-img-customize"}
               errorImg={props.errorImgSrc}
               errorSet={props.errorSet} />
           </a>
-          <div className="card-title w-100"><h5 className=" d-flex justify-content-center">{props.title}</h5></div>
+          <div className="card-title w-100"><h4 className="card-title-text d-flex justify-content-center">{props.title}</h4></div>
         </div>
         {props.text && props.descSide==="right"?
           <div className={`card-body ${props.descSide ? "col-8" : ""}`}>

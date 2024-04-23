@@ -18,7 +18,7 @@ const Image = (props) => {
 
   return(
     <Fragment>
-      <img src={imgSrc} alt={props.alt} className={`${props.className} ${hide?'hidden':''}`}/>
+      <img src={imgSrc} alt={props.alt} className={`${props.className} ${hide?'hidden':''} responsive`}/>
     </Fragment>
   )
 }
