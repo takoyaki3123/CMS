@@ -21,13 +21,12 @@ const NavbarContainer = (props) => {
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               {props.isLogin?
                 <Fragment>
-                  <li className="nav-item"><a href="#" onClick={()=>gade("/cms/class/type",{})} className="nav-link">課程檢視</a></li>
+                  <li className="nav-item"><a href="#" onClick={()=>gade("/cms/class/type",{})} className="nav-link">プログラム</a></li>
                   <li className="nav-item"><a href="#" onClick={()=>gade("/cms/personal",{})} className="nav-link">{userInfo.name}</a></li>
                 </Fragment>
                 :
                 <Fragment>
-                  <li className="nav-item"><a href="#" className="nav-link">首頁</a></li>
-                  <li className="nav-item"><a href="#"  onClick={()=>gade("/cms/login",{})} className="nav-link">登入</a></li>
+                  <li className="nav-item"><a href="#" onClick={()=>gade("/cms/login",{})} className="nav-link">ログイン</a></li>
                 </Fragment>
               }
 

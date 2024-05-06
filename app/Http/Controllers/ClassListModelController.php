@@ -50,13 +50,14 @@ class ClassListModelController extends Controller
     {
         //
         $post = $request->post();
-        $detail = ClassListModel::where("class_list.id","=",$post['body']['ID'])
-                  ->with('teacherElement')
-                  ->get();
-        // $detail = DB::table('class_list','CL')
-        //           ->join('TEACHER_DETAIL AS TD','CL.TEACHER_ID','=','TD.id')
-        //           ->where('CL.id','=',$post['body']['ID'])
-        //           ->first(['CL.id','CLASS_NAME','DESCRIBE','START_DATE','CLASS_WEEK_DAY','START_TIME','END_TIME','TD.IMG_SRC','TD.EXPERTISE','EMAIL','NAME','GRADUATED_SCHOOL']);
+        // $detail = ClassListModel::where("class_list.id","=",$post['body']['ID'])
+        //           ->with('teacherElement')
+        //           ->get();
+        $detail = DB::table('class_list','CL')
+                  ->join('TEACHER_DETAIL AS TD','CL.TEACHER_ID','=','TD.id')
+                  ->join('USER','TD.id','=','USER.id')
+                  ->where('CL.id','=',$post['body']['ID'])
+                  ->first(['CL.id','CLASS_NAME','CLASS_LINK','DESCRIBE','START_DATE','CLASS_WEEK_DAY','START_TIME','END_TIME','TD.IMG_SRC','TD.EXPERTISE','EMAIL','TD.NAME','GRADUATED_SCHOOL']);
         return $detail;
     }
 

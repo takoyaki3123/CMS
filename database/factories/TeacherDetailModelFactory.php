@@ -19,7 +19,7 @@ class TeacherDetailModelFactory extends Factory
     {
         return [
             //
-            'id' => UserModel::all()->random()->id,
+            'id' => fake()->unique()->numberBetween(1,20),
             'NAME' => fake()->name(),
             'GRADUATED_SCHOOL' => fake()->name(),
             'IMG_SRC' => '/storage/images/補習班1.jpg',

@@ -20,7 +20,7 @@ class SuggestClassModelFactory extends Factory
         return [
             //
 
-            'CLASS_ID' => ClassListModel::all()->random()->id,
+            'CLASS_ID' => fake()->unique()->numberBetween(1,10),
             'DESC' => fake()->text('500'),
             'IMG_SRC' => '/storage/images/補習班1.jpg',
             'CREATOR' => fake()->name(),

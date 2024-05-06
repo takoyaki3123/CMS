@@ -43,11 +43,11 @@ const Login = () => {
           <div className="login-avatar mt-5">
             <Avatar imgSrc={'/storage/images/default-user.jpg'}/>
           </div>
-          <div className="mt-5 mx-auto">
+          <div className="mt-5 mx-auto login-text-container">
             <div className="col-12 my-2">
               <TextField
                 type={"text"}
-                fieldName={"帳號"}
+                fieldName={"アカウント："}
                 nameDisplay={true}
                 nameInLeft={true}
                 voName={"acct"}
@@ -58,7 +58,7 @@ const Login = () => {
             <div className="col-12 my-2">
               <TextField
                 type={"password"}
-                fieldName={"密碼"}
+                fieldName={"パスワード："}
                 nameDisplay={true}
                 nameInLeft={true}
                 voName={"ps"}
@@ -67,7 +67,7 @@ const Login = () => {
 
             </div>
             <div className=" col-12 d-flex justify-content-end">
-              <a onClick={()=>{history.push("register")}} className="cms-register">註冊</a>
+              <a onClick={()=>{history.push("register")}} className="cms-register">会員登録</a>
             </div>
             <div className="mx-auto my-4 d-flex justify-content-center">
               <Button

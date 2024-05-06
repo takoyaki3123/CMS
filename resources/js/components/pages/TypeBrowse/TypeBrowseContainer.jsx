@@ -9,17 +9,23 @@ const TypeBrowseContainer = (props) => {
     history.push("list", { typeID: type });
   }
   return (
-    <div className="row px-5">
-      {props.typeList ? props.typeList.map((row, idx) =>
-        <div className="col-4" key={idx}>
-          <div className="p-3 h-100">
-            <Card size={"100%"} imgSrc={row.IMG_SRC} title={row.TYPE_NAME} titleInside={true} onClick={() => { handleClick(row.id) }} />
-          </div>
-        </div>)
-        :
-        <Fragment />
-      }
+    <div>
+      <div className="type-title px-5 mt-4">
+        <h3>コースタイプ</h3>
+      </div>
+      <hr width="95%"/>
+      <div className="row px-5">
+        {props.typeList ? props.typeList.map((row, idx) =>
+          <div className="col-4" key={idx}>
+            <div className="p-3 h-100">
+              <Card size={"100%"} imgSrc={row.IMG_SRC} title={row.TYPE_NAME} titleInside={true} onClick={() => { handleClick(row.id) }} />
+            </div>
+          </div>)
+          :
+          <Fragment />
+        }
 
+      </div>
     </div>
   )
 }

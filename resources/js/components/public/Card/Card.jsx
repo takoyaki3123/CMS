@@ -6,7 +6,7 @@ import './Card.scss';
 const Card = (props) => {
 
   return (
-    <div className={`card ${props.class}`} style={{ width: props.size }} onClick={() => props.onClick()}>
+    <div className={`card ${props.class}`} style={{ width: props.size }}>
       <div className={`${props.descSide ? "row card-row mx-0" : ""}`}>
 
         {props.text && props.descSide==="left"?
@@ -17,7 +17,7 @@ const Card = (props) => {
           </div>
           : <Fragment />}
         <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descSide ? "col-4" : ""}`}>
-          <a href={props.link} className="card-href">
+          <a href={props.link} onClick={() => props.onClick()} className="card-href">
             <Image
               src={props.imgSrc}
               alt="..."
@@ -25,7 +25,11 @@ const Card = (props) => {
               errorImg={props.errorImgSrc}
               errorSet={props.errorSet} />
           </a>
+          {props.title?
           <div className="card-title w-100"><h4 className="card-title-text d-flex justify-content-center">{props.title}</h4></div>
+          :
+          <Fragment/>}
+
         </div>
         {props.text && props.descSide==="right"?
           <div className={`card-body ${props.descSide ? "col-8" : ""}`}>

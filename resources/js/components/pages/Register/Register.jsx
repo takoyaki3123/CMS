@@ -34,7 +34,7 @@ const Register = (props) => {
         <div className="col-12 px-0 my-3">
           <TextField
               type={"text"}
-              fieldName={"電子郵件"}
+              fieldName={"Email："}
               nameDisplay={true}
               nameInLeft={true}
               voName={"email"}
@@ -44,7 +44,7 @@ const Register = (props) => {
         <div className="col-6 px-0 my-3">
           <TextField
               type={"text"}
-              fieldName={"帳號"}
+              fieldName={"アカウント："}
               nameDisplay={true}
               nameInLeft={true}
               voName={"acct"}
@@ -54,7 +54,7 @@ const Register = (props) => {
         <div className="col-6 px-0 my-3">
           <TextField
               type={"password"}
-              fieldName={"密碼"}
+              fieldName={"パスワード："}
               nameDisplay={true}
               nameInLeft={true}
               voName={"ps"}
@@ -64,7 +64,7 @@ const Register = (props) => {
         <div className="col-6 px-0 my-3">
           <TextField
               type={"text"}
-              fieldName={"姓名"}
+              fieldName={"名前："}
               nameDisplay={true}
               nameInLeft={true}
               voName={"name"}
@@ -74,7 +74,7 @@ const Register = (props) => {
         <div className="col-6 px-0 my-3">
           <Select
               type={"text"}
-              selectName={"性別"}
+              selectName={"性別："}
               nameDisplay={true}
               nameInLeft={true}
               voName={"sex"}

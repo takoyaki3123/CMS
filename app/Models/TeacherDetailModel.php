@@ -16,7 +16,7 @@ class TeacherDetailModel extends Model
    */
   protected $fillable = [
     'NAME',
-    'GRADE_SCHOOL',
+    'GRADUATED_SCHOOL',
     'EXPERTISE',
     'EMAIL',
     'CREATETIME',

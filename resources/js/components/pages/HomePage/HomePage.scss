@@ -3,6 +3,15 @@
   height:60vh;
   position: relative;
 }
+.hot-class{
+  height:20rem;
+  max-height:24rem;
+}
+.card-text{
+  pre{
+    font-size: 1.2rem;
+  }
+}
 @media (max-width:960px) {
   .homePage-carousel-container
   {

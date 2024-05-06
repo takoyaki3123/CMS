@@ -22,6 +22,7 @@ return new class extends Migration
             $table->time('START_TIME')->nullable();
             $table->time('END_TIME')->nullable();
             $table->integer('CLASS_WEEK')->nullable();
+            $table->string("CLASS_LINK")->nullable();
             $table->timestamp('CREATETIME')->useCurrent();
             $table->string('CREATOR');
             $table->timestamp('LASTUPDATE')->useCurrent();

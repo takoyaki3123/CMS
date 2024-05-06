@@ -31,6 +31,7 @@ class ClassListModelFactory extends Factory
             'START_TIME' => fake()->time(),
             'END_TIME' => fake()->time(),
             'CLASS_WEEK' => 16,
+            'CLASS_LINK' => 'https://mangajuku.jp/trial.html',
             'CREATOR' => 'CMS',
             'MODIFIER' => 'CMS'
         ];

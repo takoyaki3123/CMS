@@ -12,6 +12,6 @@ class ClassType extends Seeder
     public function run(): void
     {
         //
-        \App\Models\ClassType::factory(10)->create();
+        \App\Models\ClassType::factory(6)->create();
     }
 }

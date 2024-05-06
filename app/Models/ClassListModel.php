@@ -23,6 +23,7 @@ class ClassListModel extends Model
         'CLASS_WEEK_DAY',
         'START_TIME',
         'END_TIME',
+        'CLASS_LINK',
         'CREATETIME',
         'CREATOR',
         'LASTUPDATE',

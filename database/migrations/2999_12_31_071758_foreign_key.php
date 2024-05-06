@@ -13,7 +13,7 @@ return new class extends Migration
   public function up(): void
   {
     Schema::table('TEACHER_DETAIL', function (Blueprint $table) {
-      $table->foreignId('id')->constrained('USER', 'id');
+      $table->foreignId('id')->unique()->constrained('USER', 'id');
     });
     Schema::table('CLASS_LIST', function (Blueprint $table) {
       //

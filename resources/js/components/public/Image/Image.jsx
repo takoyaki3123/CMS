@@ -5,20 +5,33 @@ import './Image.scss';
 const Image = (props) => {
   const [hide, setHide] = useState(false);
   const [imgSrc, setImgSrc] = useState("");
+  const [errored, setErrored] = useState(false);
   const setImageHide = () => {
     setHide(true);
   }
+
+  const onError = () => {
+    if (!errored && imgSrc!=="") {
+      setImgSrc(props.errorImg);
+      setErrored(true);
+    }
+  }
+
   useEffect(()=>{
     setImgSrc(props.src);
-    if(props.sec == ""){
+    if(props.src == ""){
       setImageHide();
     }
-    console.log(props.errorSet);
-  },[])
+  },[props.src])
 
   return(
     <Fragment>
-      <img src={imgSrc} alt={props.alt} className={`${props.className} ${hide?'hidden':''} responsive`}/>
+      <img
+        src={imgSrc}
+        alt={props.alt}
+        className={`${props.className} ${hide?'hidden':''} responsive`}
+        onError={()=>onError()}
+      />
     </Fragment>
   )
 }
