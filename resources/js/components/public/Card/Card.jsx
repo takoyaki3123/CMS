@@ -10,18 +10,18 @@ const Card = (props) => {
       <div className={`${props.descSide ? "row card-row mx-0" : ""}`}>
 
         {props.text && props.descSide==="left"?
-          <div className={`card-body ${props.descSide ? "col-8" : ""}`}>
+          <div className={`card-body d-flex align-items-center ${props.descSide ? "col-8" : ""}`}>
             <span className="card-text">
               <pre>{props.text}</pre>
             </span>
           </div>
           : <Fragment />}
         <div className={` ${props.titleInside ? "cardInside" : ""} ${props.descSide ? "col-4" : ""}`}>
-          <a href={props.link} onClick={() => props.onClick()} className="card-href">
+          <a href={props.link} onClick={() => props.onClick()} className="card-href d-flex justify-content-center">
             <Image
               src={props.imgSrc}
               alt="..."
-              className={"card-img-top card-img-customize"}
+              className={`card-img-top ${props.imgClass}`}
               errorImg={props.errorImgSrc}
               errorSet={props.errorSet} />
           </a>
@@ -32,7 +32,7 @@ const Card = (props) => {
 
         </div>
         {props.text && props.descSide==="right"?
-          <div className={`card-body ${props.descSide ? "col-8" : ""}`}>
+          <div className={`card-body d-flex align-items-center ${props.descSide ? "col-8" : ""}`}>
             <span className="card-text">
               <pre>{props.text}</pre>
             </span>
@@ -55,6 +55,7 @@ Card.propTypes = {
   link: PropTypes.string,
   size: PropTypes.string,
   class: PropTypes.string,
+  imgClass: PropTypes.string,
   //func
   onClick: PropTypes.func,
 };

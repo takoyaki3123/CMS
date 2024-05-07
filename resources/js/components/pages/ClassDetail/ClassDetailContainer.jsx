@@ -25,6 +25,7 @@ const ClassDetailContainer = (props) => {
           text={teacherDesc}//教師介紹
           size={"100%"}
           class={"detail-bg"}
+          imgClass={"detail-card-img"}
           onClick={() => { }}
         />
       </div>
@@ -35,7 +36,7 @@ const ClassDetailContainer = (props) => {
       </div>
       <div className="mt-3">
         {/* <button className="w-100 btn btn-primary py-2"> */}
-          <a href={`${props.detail.CLASS_LINK}`} className="class-link w-100 btn btn-primary py-2">課程網站</a>
+          <a target="_blank" href={`${props.detail.CLASS_LINK}`} className="class-link w-100 btn btn-primary py-2">課程網站</a>
         {/* </button> */}
       </div>
     </div>)

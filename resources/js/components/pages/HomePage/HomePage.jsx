@@ -39,6 +39,7 @@ const HomePage = (props) => {
             errorSet={false}
             text={row.DESC}//教師介紹
             class={idx % 2 === 0?"ps-4":"pe-4"}
+            imgClass={"home-card-img"}
             size={"100%"}
             onClick={() => { linkToClass(row.CLASS_ID) }}
           />

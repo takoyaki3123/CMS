@@ -18,7 +18,14 @@ const TypeBrowseContainer = (props) => {
         {props.typeList ? props.typeList.map((row, idx) =>
           <div className="col-4" key={idx}>
             <div className="p-3 h-100">
-              <Card size={"100%"} imgSrc={row.IMG_SRC} title={row.TYPE_NAME} titleInside={true} onClick={() => { handleClick(row.id) }} />
+              <Card
+                size={"100%"}
+                imgSrc={row.IMG_SRC}
+                title={row.TYPE_NAME}
+                titleInside={true}
+                imgClass={"type-card-img"}
+                onClick={() => { handleClick(row.id) }}
+                />
             </div>
           </div>)
           :

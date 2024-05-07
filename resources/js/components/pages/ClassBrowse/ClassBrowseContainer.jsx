@@ -19,7 +19,14 @@ const ClassBrowseContainer = (props) => {
         {props.classList ? props.classList.map((row, idx) =>
           <div className="col-4" key={idx}>
             <div className="p-3 h-100">
-              <Card size={"100%"} imgSrc={row.IMG_SRC} title={row.CLASS_NAME} titleInside={true} onClick={() => { handleClick(row.id) }} />
+              <Card
+                size={"100%"}
+                imgSrc={row.IMG_SRC}
+                title={row.CLASS_NAME}
+                titleInside={true}
+                imgClass={"class-list-card-img"}
+                onClick={() => { handleClick(row.id) }}
+              />
             </div>
           </div>)
           :
