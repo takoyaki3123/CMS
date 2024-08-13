@@ -1,6 +1,9 @@
 # CMS
 class_manage_system
 
+# 記録映像
+https://www.youtube.com/watch?v=qdm1guPz6R4
+
 ### フロントエンド構造
  >resources
  >>js
