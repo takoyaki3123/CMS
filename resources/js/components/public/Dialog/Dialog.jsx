@@ -10,15 +10,16 @@ const Dialog = (props) => {
         console.log(res);
         // const modalClose = document.querySelector("#modalClose");
         // modalClose.click();
-        const modalContainer = document.querySelector("#modal");
+        const modalContainer = document.querySelector("#"+props.modalId);
         const modal = bootstrap.Modal.getInstance(modalContainer);
+        props.cancel();
         modal.hide();
       }
     })
 
   }
   return(
-    <div className="modal fade" id="modal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id={props.modalId} aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
@@ -29,7 +30,7 @@ const Dialog = (props) => {
             {props.children}
           </div>
           <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" id="modalClose" data-bs-dismiss="modal">{props.cancelText}</button>
+            <button type="button" onClick={()=>props.cancel()} className="btn btn-secondary" id="modalClose" data-bs-dismiss="modal">{props.cancelText}</button>
 
             <Button
               text={props.submitText}
@@ -49,10 +50,12 @@ Dialog.propTypes = {
   title: PropTypes.string,
   submitText: PropTypes.string,
   cancelText: PropTypes.string,
+  modalId: PropTypes.string,
   // object
   param: PropTypes.object,
   // function
   submit: PropTypes.func,
+  cancel: PropTypes.func,
 }
 
 export default Dialog;

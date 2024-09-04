@@ -3,6 +3,7 @@
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\ClassListModelController;
 use \App\Http\Controllers\ClassType;
+use App\Http\Controllers\FileModelController;
 use App\Http\Controllers\SuggestClassController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
@@ -30,3 +31,6 @@ Route::post('/register',[UserController::class,'store']);
 Route::post('/userUpdate',[UserController::class,'update']);
 Route::post('/suggestClass',[SuggestClassController::class,'index']);
 Route::post('/carouselImg',[CarouselController::class,'index']);
+Route::post('/upload',[FileModelController::class,'store']);
+Route::post('/homeVisionUpload',[CarouselController::class,'update']);
+

@@ -7,4 +7,5 @@ export const lazyComponent = [
   {urlCode:"/home", component:lazy(()=> import('../components/pages/HomePage/HomePage'))},
   {urlCode:"/register", component:lazy(()=> import('../components/pages/Register/Register'))},
   {urlCode:"/personal", component:lazy(()=> import('../components/pages/Personal/Personal'))},
+  {urlCode:"/admin/home", component:lazy(()=> import('../components/pages/MaintainPage/HomePage/HomePage'))},
 ]

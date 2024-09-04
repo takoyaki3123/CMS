@@ -9,6 +9,9 @@ const Image = (props) => {
   const setImageHide = () => {
     setHide(true);
   }
+  const showImage = () => {
+    setHide(false);
+  }
 
   const onError = () => {
     if (!errored && imgSrc!=="") {
@@ -21,6 +24,9 @@ const Image = (props) => {
     setImgSrc(props.src);
     if(props.src == ""){
       setImageHide();
+    }
+    else{
+      showImage();
     }
   },[props.src])
 

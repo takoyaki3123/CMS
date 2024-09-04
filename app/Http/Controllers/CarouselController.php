@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Process\ErrorMsg;
 use App\Models\CarouselModel;
+use Carousel;
 use Illuminate\Http\Request;
 
 class CarouselController extends Controller
@@ -52,9 +54,24 @@ class CarouselController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CarouselModel $carouselModel)
+    public function update(Request $request)
     {
         //
+        $post = $request->post()['body'];
+        try{
+          // todo: update carousel data;
+          $carousel = Carousel::find($post['id']);
+          $carousel->IMG_SRC = '/storage/images/'.$post['imageName'];
+          $carousel->save();
+          return true;
+        }
+        catch (\Throwable $th){
+          $errorMsg = new ErrorMsg;
+          $errorMsg->msg = $th->getMessage();
+          $errorMsg->time = date("Y-m-d H:i:s");
+          return json_encode($errorMsg);
+          // return true;
+        }
     }
 
     /**

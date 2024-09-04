@@ -14,6 +14,22 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         //
+        UserModel::firstOrCreate(['ACCT'=>'testing'],[
+          'NAME'=>'testing',
+          'ACCT'=>'testing',
+          'PWD'=>'testing',
+          'SEX'=>'1',
+          'EMAIL'=>'testing@gmail.com',
+          'IDENTITY_ID' => 1,
+        ]);
+        UserModel::firstOrCreate(['ACCT'=>'admin'],[
+          'NAME'=>'admin',
+          'ACCT'=>'admin',
+          'PWD'=>'admin',
+          'SEX'=>'1',
+          'EMAIL'=>'admin@gmail.com',
+          'IDENTITY_ID' => 1,
+        ]);
         UserModel::factory(20)->create();
     }
 }

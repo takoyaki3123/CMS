@@ -22,7 +22,8 @@ const DetailUpdate = (props) => {
       submit={props.updateUser}
       param={VO}
       submitText={"submit"}
-      cancelText={"cancel"}>
+      cancelText={"cancel"}
+      modalId={"modal"}>
       <div className="row me-2">
         <div className="col-12 px-0 my-3">
           <TextField

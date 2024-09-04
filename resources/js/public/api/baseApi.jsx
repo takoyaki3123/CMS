@@ -3,11 +3,11 @@ import React from "react";
 import axios from "axios";
 
 const isLocal = document.location.hostname === '127.0.0.1' || document.location.hostname === 'localhost';
-
+const Token = '';
 const request = axios.create({
   timeout:120000,
 });
-request.defaults.headers.post['Content-Type'] = 'application/json';
+// request.defaults.headers.post['Content-Type'] = 'application/json';
 
 const setting = (urlCode, data) => {
   console.log("setting");
@@ -29,6 +29,7 @@ const baseApi = (urlCode, data) => {
  }
  return new Promise((resolve,reject) => {
   setting(urlCode, data).then((res) => {
+
     request.post(res.header.url,res.body).then((res) => {
         console.log("data",data);
         console.log(res);
@@ -46,11 +47,50 @@ const baseApi = (urlCode, data) => {
   })
  })
 }
+
+const uploadApi = (urlCode,data) => {
+  const loader = document.querySelector('.loader-container');
+ if(loader){
+   loader.style.display = "flex";
+ }
+ return new Promise((resolve,reject) => {
+  setting(urlCode, data).then((res) => {
+
+    const formData = new FormData();
+    Object.keys(res.body.body).forEach((key)=>{
+      formData.append(key,res.body.body[key]);
+    })
+    for (var key of formData.entries()) {
+      console.log(key[0] + ', ' + key[1]);
+    }
+    request.post(res.header.url,formData,{
+      headers:
+        {
+          'Content-Type':'multipart/form-data'
+        }
+      }).then((res) => {
+      // alert("upload success");
+      resolve(res)
+    })
+    .catch((err) => {
+      console.log('error api');
+      reject(err);
+    })
+    .finally(()=>{
+      if(loader){
+        loader.style.display = "none";
+      }
+    });
+  })
+ })
+}
+
 const isError = (res) => {
   return res.msg?true:false;
 }
 
 export {
   baseApi,
+  uploadApi,
   isError
 }
