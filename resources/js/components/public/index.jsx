@@ -15,6 +15,9 @@ import Loader from "./Loader/Loader";
 import Select from "./Select/Select";
 import Dialog from "./Dialog/Dialog";
 import Footer from "./Footer/Footer";
+import Uploader from "./Uploader/Uploader";
+import Thumbnail from "./Thumbnail/Thumbnail";
+import Table from "./Table/Table";
 export {
   Navbar,
   TextField,
@@ -32,4 +35,7 @@ export {
   Select,
   Dialog,
   Footer,
+  Uploader,
+  Thumbnail,
+  Table,
 }

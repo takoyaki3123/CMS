@@ -4,13 +4,15 @@ import { baseApi, uploadApi } from "../../../public/api";
 
 const Uploader = (props) => {
   const handleChange = (e) => {
-    uploadApi('upload',{"multiple":props.multiple,"image":e.target.files[0]})
-    .then((res) => {
-      if(res.data.msg){
-        alert("upload fail!");
-      }
+    if(e.target.file[0]){
+      uploadApi('upload',{"multiple":props.multiple,"image":e.target.files[0]})
+      .then((res) => {
+        if(res.data.msg){
+          alert("upload fail!");
+        }
 
-    });
+      });
+    }
 
   }
   return(
@@ -24,6 +26,5 @@ Uploader.propTypes = {
   id: PropTypes.string,
   //other
   fileRef:PropTypes.shape({current: PropTypes.instanceOf(HTMLInputElement)}),
-  setFile:PropTypes.func,
 }
 export default Uploader;

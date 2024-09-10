@@ -15,6 +15,9 @@ const Dialog = (props) => {
         props.cancel();
         modal.hide();
       }
+      else{
+        alert("choose the image!");
+      }
     })
 
   }
