@@ -5,19 +5,22 @@ import HomePageUpdate from "./HomePageUpdate";
 import {openModal} from '../../../../public/utils/utils';
 import TrendUpdate from "./TrendUpdate";
 import './Homepage.scss';
-
+import {trendVO} from './HomePageVO';
 const HomePageMaintain = (props) => {
     const head = ["ID","ビジュアルダイアグラム","操作"];
-    const trendHead = ["ID","画像","説明","操作"];
+    const [classList,setClassList] = useState([]);
     const [val,setVal] = useState([]);
-    const [trendVal, setTrendVal] = useState([]);
     const [updateSrc, setUpdateSrc] = useState("");
-    const [updateTrendSrc, setUpdateTrendSrc] = useState("");
     const [carouselID,setCarouselID] = useState(0);
-    const [trendID, setTrendID] = useState(0);
-    const [trendDesc, setTrendDesc] = useState("");
     const fileRef = useRef(null);
+
+    //trend use
+    const trendHead = ["ID","画像","説明","操作"];
+    const [updateTrendSrc, setUpdateTrendSrc] = useState("");
+    const [trendVal, setTrendVal] = useState([]);
     const trendFileRef = useRef(null);
+    const [VO, setVO] = useState(new Object(trendVO));
+    const [tmpDesc,setTmpDesc] = useState("");
 
     // vision image dialog
     const showModal = (id,carouselID,src) => {
@@ -27,10 +30,13 @@ const HomePageMaintain = (props) => {
     }
 
     // trend dialog
-    const showTrendModal = (id,carouselID,src) => {
+    const showTrendModal = (id,trendID,desc,classID,src) => {
       setUpdateTrendSrc(src);
-      setTrendID(carouselID);
       openModal(id);
+      //setVO
+      setTmpDesc(desc);
+      setVO({...VO,"id":trendID,"desc":desc,"classID":classID});
+
     }
 
     // get carousel data and trend data
@@ -53,14 +59,24 @@ const HomePageMaintain = (props) => {
       baseApi("suggestClass",{})
       .then((res) => {
         let tmp = [];
-          res.data.map((row,idx)=>{
-            tmp.push({"ID":idx+1,
-                      "thumbnail":<Thumbnail btnText={"サムネイル画像"}><Image className={"d-block m-auto"} src={row.IMG_SRC}/></Thumbnail>,
-                      "description":<div className="desc py-2"><MdTextarea value={row.DESC} show={false}/></div>,
-                      "maintainButton":<Button text={"修正"} type={"primary"} variant={"contain"} isShow={true} onClick={()=>showTrendModal("trend",idx+1,row.IMG_SRC)}/>
-                    })
-          })
-          setTrendVal([...tmp]);
+        res.data.map((row,idx)=>{
+          tmp.push({"ID":idx+1,
+                    "thumbnail":<Thumbnail btnText={"サムネイル画像"}><Image className={"d-block m-auto"} src={row.IMG_SRC}/></Thumbnail>,
+                    "description":<div className="desc py-2"><MdTextarea value={row.DESC} show={false}/></div>,
+                    "maintainButton":<Button text={"修正"} type={"primary"} variant={"contain"} isShow={true} onClick={()=>showTrendModal("trend",idx+1,row.DESC,row.CLASS_ID,row.IMG_SRC)}/>
+                  })
+        })
+        setTrendVal([...tmp]);
+      });
+
+      // get class list for select in trend update dialog
+      baseApi("AllClassList",{})
+      .then((res) => {
+        let tmp = [];
+        res.data.map((row,idx) => {
+          tmp.push({val:row.id,label:row.CLASS_NAME});
+        })
+        setClassList(tmp);
       });
     }
 
@@ -100,21 +116,16 @@ const HomePageMaintain = (props) => {
     // update trend data
     const trendUpdate = () => {
       return new Promise((resolve)=>{
-        if(fileRef.current.files[0]){
-          baseApi('homeTrendUpload',{"id":trendID,"imageName":trendFileRef.current.files[0].name,"desc":trendDesc})
-          .then((res) => {
-            if(res.data.msg){
-              alert("update fail!");
-            }
-            else{
-              init();
-              resolve(true);
-            }
-          });
-        }
-        else{
-          resolve(false);
-        }
+        baseApi('homeTrendUpload',VO)
+        .then((res) => {
+          if(res.data.msg){
+            alert("update fail!");
+          }
+          else{
+            init();
+            resolve(true);
+          }
+        });
       })
     }
     const backup = () => {
@@ -131,7 +142,13 @@ const HomePageMaintain = (props) => {
         });
       })
     }
+    const setDesc = (text)=>{
+      setVO({...VO,"desc":text});
+    }
 
+    useEffect(()=>{
+      setDesc(tmpDesc);
+    },[tmpDesc])
     useEffect(()=>{
         init();
     },[])
@@ -165,7 +182,15 @@ const HomePageMaintain = (props) => {
               submit={trendUpdate}
               cancelText={"取消"}
               cancel={() => dialogCancel()}>
-              <TrendUpdate src={updateTrendSrc} desc={trendDesc} fileRef={trendFileRef} setDesc={setTrendDesc}/>
+              <TrendUpdate
+                src={updateTrendSrc}
+                fileRef={trendFileRef}
+                VO={VO}
+                setVO={setVO}
+                classList={classList}
+                tmpDesc={tmpDesc}
+                setTmpDesc={setTmpDesc}
+              />
             </Dialog>
           </div>
         </div>

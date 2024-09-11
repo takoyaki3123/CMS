@@ -26,6 +26,12 @@ class ClassListModelController extends Controller
         $arrVal = array_values($dataArr);
         return $arrVal;
     }
+    public function getAllClassList(){
+      $dataArr = ClassListModel::all(["id","TYPE_ID","CLASS_NAME","IMG_SRC"])->toArray();
+      $arrVal = array_values($dataArr);
+      return $arrVal;
+  }
+
 
     /**
      * Show the form for creating a new resource.

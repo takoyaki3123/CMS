@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/classType',[ClassType::class,'index']);
 Route::post('/classList',[ClassListModelController::class,'findByTypeID']);
+Route::post('/AllClassList',[ClassListModelController::class,'getAllClassList']);
 Route::post('/classDetail',[ClassListModelController::class,'show']);
 Route::post('/login',[UserController::class,'login']);
 Route::post('/register',[UserController::class,'store']);
@@ -33,4 +34,5 @@ Route::post('/suggestClass',[SuggestClassController::class,'index']);
 Route::post('/carouselImg',[CarouselController::class,'index']);
 Route::post('/upload',[FileModelController::class,'store']);
 Route::post('/homeVisionUpload',[CarouselController::class,'update']);
+Route::post('/homeTrendUpload',[SuggestClassController::class,'update']);
 

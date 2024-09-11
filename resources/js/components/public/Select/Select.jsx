@@ -1,9 +1,15 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import './Select.scss';
 
 import PropTypes from 'prop-types';
 const Select = (props) => {
+  useEffect(()=>{
+    console.log(props.VO);
+    console.log(props.voName);
+
+
+  },[props.VO]);
   return (
     <Fragment>
       <div className={(props.nameDisplay&&props.nameInLeft?"select ":"select-Top ") + " px-2 tfTop w-100"}>

@@ -8,7 +8,6 @@ const Thumbnail = (props) => {
       const popover = document.querySelectorAll(".tooltip");
       const btn = document.querySelectorAll(".thumbnailBtn");
       const btnHeight = btn[0].getBoundingClientRect().height;
-      const btnWidth = btn[0].getBoundingClientRect().width;
       const windowsHeight = document.body.offsetHeight;
       setMouseIn(true);
 
@@ -42,14 +41,6 @@ const Thumbnail = (props) => {
       }
     }
   }
-  useEffect(()=>{
-    const btn = document.querySelectorAll(".thumbnailBtn");
-    const btnWidth = btn[0].getBoundingClientRect().width;
-    const popover = document.querySelectorAll(".tooltip");
-    for(var i = 0; i < popover.length; i++){
-      popover[i].style.left = (btnWidth + 10) + 'px';
-    }
-  },[])
   return (
       <div className="thumbnail">
           <button type="button" className="btn btn-primary thumbnailBtn" onMouseOut={()=>mouseOut()} onMouseOver={()=>mouseOver()}>{props.btnText}</button>
