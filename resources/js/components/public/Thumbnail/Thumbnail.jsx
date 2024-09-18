@@ -41,10 +41,11 @@ const Thumbnail = (props) => {
       }
     }
   }
+
   return (
       <div className="thumbnail">
           <button type="button" className="btn btn-primary thumbnailBtn" onMouseOut={()=>mouseOut()} onMouseOver={()=>mouseOver()}>{props.btnText}</button>
-          <div className="tooltip thumbnailContent">{props.children}</div>
+          <div className="tooltip thumbnailContent" style={{ display:"none" }}>{props.children}</div>
       </div>
 
   )

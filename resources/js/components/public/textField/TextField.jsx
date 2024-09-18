@@ -22,7 +22,7 @@ const TextField = (props) => {
 TextField.propTypes = {
   // var
   type: PropTypes.string, // text number password
-  voName: PropTypes.string,
+  voName: PropTypes.string, // key in the vo
   fieldName: PropTypes.string, // text name
   nameDisplay: PropTypes.bool,
   nameInLeft: PropTypes.bool, // name in left or top, true is left

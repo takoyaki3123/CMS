@@ -8,4 +8,5 @@ export const lazyComponent = [
   {urlCode:"/register", component:lazy(()=> import('../components/pages/Register/Register'))},
   {urlCode:"/personal", component:lazy(()=> import('../components/pages/Personal/Personal'))},
   {urlCode:"/admin/home", component:lazy(()=> import('../components/pages/MaintainPage/HomePage/HomePage'))},
+  {urlCode:"/admin/type", component:lazy(()=> import('../components/pages/MaintainPage/Type/TypeBrowse'))},
 ]

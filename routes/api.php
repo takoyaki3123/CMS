@@ -24,6 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/classType',[ClassType::class,'index']);
+Route::post('/classTypeUpload',[ClassType::class,'update']);
 Route::post('/classList',[ClassListModelController::class,'findByTypeID']);
 Route::post('/AllClassList',[ClassListModelController::class,'getAllClassList']);
 Route::post('/classDetail',[ClassListModelController::class,'show']);

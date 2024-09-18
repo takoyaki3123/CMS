@@ -59,14 +59,15 @@ class SuggestClassController extends Controller
         //
         $post = $request->post()['body'];
         try{
-          // todo: update carousel data;
-          $carousel = SuggestClass::find($post['id']);
-          $carousel->DESC = $post['desc'];
-          $carousel->CLASS_ID = $post['classID'];
+          // todo: update suggest data;
+          $suggest = SuggestClass::find($post['id']);
+          $suggest->DESC = $post['desc'];
+          $suggest->CLASS_ID = $post['classID'];
+          $suggest->MODIFIER = 'admin';
           if($post['imageName'] != ""){
-            $carousel->IMG_SRC = '/storage/images/'.$post['imageName'];
+            $suggest->IMG_SRC = '/storage/images/'.$post['imageName'];
           }
-          $carousel->save();
+          $suggest->save();
           return true;
         }
         catch (\Throwable $th){
