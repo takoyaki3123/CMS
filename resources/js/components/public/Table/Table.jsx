@@ -8,7 +8,7 @@ const Table = (props) => {
       <thead>
         <tr>
           {props.head.map((val,idx)=>
-            <th key={idx}>{val}</th>
+            <th key={idx} className={props.classEachCell[idx]}>{val}</th>
           )}
         </tr>
       </thead>
@@ -27,5 +27,6 @@ const Table = (props) => {
 Table.propType = {
   head: PropType.array,
   value: PropType.array,
+  classEachCell: PropType.array,
 };
 export default Table;

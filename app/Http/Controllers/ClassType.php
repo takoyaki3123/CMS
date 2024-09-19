@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Process\ErrorMsg;
+use App\Models\ClassType as ModelsClassType;
 use ClassTypeModel;
 use Illuminate\Http\Request;
 
@@ -39,7 +41,27 @@ class ClassType extends Controller
     public function update(Request $request)
     {
         //
-        return true;
+        $post = $request->post()['body'];
+        try{
+          // todo: update suggest data;
+          $type = ModelsClassType::find($post['id']);
+          $type->TYPE_NAME = $post['typeName'];
+          $type->CODE = $post['typeCode'];
+          $type->MODIFIER = 'admin';
+
+          if($post['imgName'] != ""){
+            $type->IMG_SRC = '/storage/images/'.$post['imgName'];
+          }
+          $type->save();
+          return true;
+        }
+        catch (\Throwable $th){
+          $errorMsg = new ErrorMsg;
+          $errorMsg->msg = $th->getMessage();
+          $errorMsg->time = date("Y-m-d H:i:s");
+          return json_encode($errorMsg);
+          // return true;
+        }
     }
 
     /**

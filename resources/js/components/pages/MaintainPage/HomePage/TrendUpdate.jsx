@@ -4,20 +4,23 @@ import PropTypes from 'prop-types';
 
 const TrendUpdate = (props) => {
   const [tmpSrc,setTmpSrc] = useState("");
+
+  const refChange = () => {
+    if(props.fileRef.current.files[0]){
+      props.setVO({...props.VO,"imageName":props.fileRef.current.files[0].name});
+    }
+    else{
+      props.setVO({...props.VO,"imageName":""});
+    }
+  }
   useEffect(()=>{
     setTmpSrc(props.src);
   },[props.src])
-  useEffect(()=>{
-
-    if(props.fileRef.current.files[0]){
-      props.setVO({...props.VO,"imageName":props.fileRef.current.files[0].name})
-    }
-  },[props.fileRef.current])
   return(
     <div>
 			<Image src={tmpSrc} className="d-block m-auto updateImg" errorImg={props.src}/>
       <div className="mx-auto mb-3 mt-1">
-        <Uploader id={"fileUpload"} multiple={false} fileRef={props.fileRef}/>
+        <Uploader id={"fileUpload"} multiple={false} fileRef={props.fileRef} refChange={()=>refChange()}/>
       </div>
       <div className="my-2">
         <Select

@@ -13,18 +13,26 @@ const TypeBrowse = () => {
   const [imgSrc, setImgSrc] = useState("");
   const fileRef = useRef(null);
   const head = ["ID","タイプ名","タイプコード","操作"];
+  const classEachCell = ["","","","maintainArea"];
 
   const init = () => {
     getAllType();
   }
 
-  // vision image dialog
+  // dialog that can update type data
   const showModal = (id, type, typeName, typeCode, src) => {
     setImgSrc(src);
     // setTypeID(type);
     openModal(id);
     setVO({...VO, "id":type, "typeName":typeName, "typeCode": typeCode});
   }
+  const deleteType = (id) => {
+
+  }
+  const addType = () => {
+
+  }
+  // get type list data
   const getAllType = () => {
     baseApi('classType', {})
       .then((res) => {
@@ -35,7 +43,11 @@ const TypeBrowse = () => {
             "ID": idx + 1,
             "typeName": <p>{row.TYPE_NAME}</p>,
             "typeCode": <p>{row.CODE}</p>,
-            "maintainanceButton":<Button text={"修正"} type={"primary"} variant={"contain"} isShow={true} onClick={() => showModal("typeUpdate", idx + 1, row.TYPE_NAME, row.CODE, row.IMG_SRC)} />,
+            "maintainanceButton":
+            <div className="maintainArea">
+              <Button text={"修正"} type={"primary"} variant={"contain"} isShow={true} onClick={() => showModal("typeUpdate", idx + 1, row.TYPE_NAME, row.CODE, row.IMG_SRC)} />
+              <Button text={"消去"} type={"error"} variant={"contain"} isShow={true} onClick={() => deleteType(idx)} />
+            </div>,
           })
         })
         setTypeList(tmp);
@@ -74,8 +86,11 @@ const TypeBrowse = () => {
       <div className="type-title px-5 mt-4">
         <h3>コースタイプ</h3>
       </div>
-      <hr width="95%"/>
-      <Table head={head} value={typeList}/>
+      <hr width="100%"/>
+      <div className="float-end">
+        <Button text={"+"} type={"success"} variant={"contain"} isShow={true} onClick={() => addType()} />
+      </div>
+      <Table head={head} value={typeList} classEachCell={classEachCell}/>
       <Dialog
           modalId={"typeUpdate"}
           title={"タイプ修正"}
